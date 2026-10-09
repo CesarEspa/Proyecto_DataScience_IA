@@ -1,0 +1,14 @@
+# Prueba real de la API (uvicorn api.main:app --port 8000) con el modelo exportado
+
+$ curl http://localhost:8000/health
+{"status":"ok","model_loaded":true,"model_version":"aixray_pneumonia_classifier v1 (local)","threshold":0.5853266716003418}
+
+$ curl -X POST http://localhost:8000/predict -F file=@person1310_bacteria_3304.png
+{"prediction":"PNEUMONIA","probability":0.9998,"threshold":0.5853,"model_version":"aixray_pneumonia_classifier v1 (local)","disclaimer":"Este sistema es un proyecto académico de inteligencia artificial y no constituye un diagnóstico médico ni sustituye la evaluación de un profesional de la salud."}
+
+$ curl -X POST http://localhost:8000/predict -F file=@IM-0416-0001.png
+{"prediction":"NORMAL","probability":0.0125,"threshold":0.5853,"model_version":"aixray_pneumonia_classifier v1 (local)","disclaimer":"Este sistema es un proyecto académico de inteligencia artificial y no constituye un diagnóstico médico ni sustituye la evaluación de un profesional de la salud."}
+
+$ curl ... -F file=@notas.txt (text/plain)  -> HTTP 415
+$ curl ... -F file=@notas.txt;type=image/jpeg  -> HTTP 400 {"detail":"El archivo no es una imagen JPEG/PNG válida."}
+$ curl http://localhost:8000/docs  -> HTTP 200

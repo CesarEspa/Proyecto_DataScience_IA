@@ -1,0 +1,6 @@
+run,test_F1,IC95_inf,IC95_sup
+Run 3 · fine-tuning 1 paso,0.9518,0.9268,0.9749
+Var. A · fine-tuning 2 fases,0.9367,0.9073,0.963
+Var. B · Run 1 sin flip,0.9167,0.8814,0.9474
+Run 1 · congelado LR 1e-3,0.9161,0.88,0.9471
+Run 2 · congelado LR 1e-4 DO 0.5,0.8889,0.8506,0.9241

@@ -1,0 +1,63 @@
+{
+  "model_name": "aixray_pneumonia_classifier",
+  "registry_version": 1,
+  "stage": "Staging",
+  "alias": "staging",
+  "run_id": "648e23a2957d48a18259a7d879207c38",
+  "run_name": "varA_finetune_2fases_lr1e-5",
+  "run_label": "Var. A · fine-tuning 2 fases",
+  "selection_criterion": "max val_F1 (desempate val_AUC si diferencia < 0.01)",
+  "threshold_default": 0.5,
+  "threshold_clinical": 0.5853266716003418,
+  "target_recall": 0.95,
+  "test_size": 302,
+  "test_pneumonia": 156,
+  "test_normal": 146,
+  "test_metrics_threshold_05": {
+    "accuracy": 0.9337748344370861,
+    "precision": 0.925,
+    "recall": 0.9487179487179487,
+    "specificity": 0.9178082191780822,
+    "f1_score": 0.9367088607594937,
+    "auc": 0.986652616789603,
+    "tp": 148,
+    "fp": 12,
+    "tn": 134,
+    "fn": 8
+  },
+  "test_metrics_threshold_clinical": {
+    "accuracy": 0.9370860927152318,
+    "precision": 0.9363057324840764,
+    "recall": 0.9423076923076923,
+    "specificity": 0.9315068493150684,
+    "f1_score": 0.939297124600639,
+    "auc": 0.986652616789603,
+    "tp": 147,
+    "fp": 10,
+    "tn": 136,
+    "fn": 9
+  },
+  "val_metrics_threshold_clinical": {
+    "accuracy": 0.9611650485436893,
+    "precision": 0.9556962025316456,
+    "recall": 0.967948717948718,
+    "specificity": 0.954248366013072,
+    "f1_score": 0.9617834394904459,
+    "auc": 0.9913691972515501,
+    "tp": 151,
+    "fp": 7,
+    "tn": 146,
+    "fn": 5
+  },
+  "false_negatives_clinical": [
+    "person111_virus_212.png",
+    "person109_virus_203.png",
+    "person1488_virus_2593.png",
+    "person117_bacteria_557.png",
+    "person1138_virus_1877.png",
+    "person21_bacteria_73.png",
+    "person459_virus_947.png",
+    "person798_virus_1430.png",
+    "person111_virus_210.png"
+  ]
+}

@@ -1,0 +1,37 @@
+# Versiones fijadas y verificadas juntas (entrenamiento + MLflow + API) durante la
+# preparación de este laboratorio. Si actualizas alguna, revisa en particular
+# tensorflow <-> protobuf <-> mlflow, que es la combinación más sensible a romperse
+# (protobuf<6 no es compatible con TensorFlow >=2.21; mlflow<3 requiere protobuf<6).
+#
+# Requiere Python 3.10 o superior (tensorflow-cpu==2.21.0 no publica wheels para 3.9).
+
+# Entrenamiento / Deep Learning
+tensorflow-cpu==2.21.0        # usa "tensorflow" en vez de "tensorflow-cpu" si tienes GPU con soporte CUDA
+protobuf>=6.31.1,<7
+
+# Tracking y registro de experimentos
+mlflow==3.15.1
+
+# Procesamiento de datos
+numpy==2.4.4
+pandas==2.3.3
+scikit-learn==1.8.0
+matplotlib==3.10.9
+pillow==12.2.0
+
+# Procesamiento masivo (paso simbólico de la Fase 1 -> ver README.md, sección "Fase 1 vs. Fase 2")
+pyspark==4.0.1
+
+# API
+fastapi==0.141.1
+uvicorn[standard]==0.46.0
+python-multipart==0.0.26
+pydantic==2.13.3
+
+# Notebooks
+jupyter==1.1.1
+ipykernel==6.30.0
+
+# Pruebas
+pytest==9.1.1
+httpx==0.28.1

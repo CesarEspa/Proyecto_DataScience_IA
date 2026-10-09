@@ -1,0 +1,38 @@
+# Dataset completo -- nunca se sube al repositorio (ver data/README.md); las figuras
+# y tablas de reports/ SÍ se suben, por eso esta regla solo aplica a data/ y a archive*/
+data/*.csv
+data/**/*.jpeg
+data/**/*.jpg
+data/**/*.png
+archive*/
+
+# El .gitignore de la raíz del repo ("Maestria en IA y Data Science/.gitignore") ignora
+# *.csv en todo el repositorio; estas tablas sí son parte de la entrega.
+!reports/*.csv
+
+# Artefactos de MLflow (pesan cientos de MB, se regeneran corriendo los notebooks).
+# El modelo entrenado (aixray_model.keras, ~90 MB) SÍ se sube: sin él la API no
+# funciona para quien clone el repo y no quiera reentrenar desde cero.
+mlruns/
+mlartifacts/
+mlflow.db
+mlflow.db.bak
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+
+# Entorno / secretos
+.env
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
